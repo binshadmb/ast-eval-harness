@@ -1,0 +1,23 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "ast-eval-harness"
+version = "0.1.0"
+description = "Static Python checks and a Docker-isolated evaluation runner"
+requires-python = ">=3.11"
+license = { file = "LICENSE" }
+readme = "README.md"
+authors = [{ name = "Binshad Mohammed Basheer" }]
+dependencies = []
+
+[project.optional-dependencies]
+dev = ["pytest>=8"]
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["analyzer*", "runner*"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
